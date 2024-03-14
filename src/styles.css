@@ -167,6 +167,15 @@ app-cart {
   font-weight: bold;
 }
 
+.filter-buttons{
+  position: relative;
+  text-align: center;
+}
+
+.filter-buttons button {
+  margin: 2px;
+}
+
 /* Total */
 
 app-total {

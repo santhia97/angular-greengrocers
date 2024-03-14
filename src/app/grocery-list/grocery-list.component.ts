@@ -44,6 +44,11 @@ export class GroceryListComponent implements OnInit {
     this.groceriesService.removeFromCart(item);
   }
 
+  filterByType(type: string) {
+    this.groceries = this.groceriesService.filterByType(type);
+  }
+  
+
 }
 
 

@@ -1,6 +1,14 @@
 <div>
     <h2>Your Cart</h2>
 
+    <!--Extension 1-->
+     <!-- Filter buttons -->
+     <div class="filter-buttons">
+        <button (click)="filterByType('fruit')">Fruits</button>
+        <button (click)="filterByType('vegetable')">Vegetables</button>
+        <button (click)="filterByType('default')">All</button>
+    </div>
+
     <div class="cart--item-list-container" *ngIf="cartItems.length > 0; else emptyCart">
         <ul class="item-list cart--item-list">
           <li *ngFor="let item of cartItems">

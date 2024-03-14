@@ -10,6 +10,7 @@ import { GroceriesService } from '../groceries.service';
 })
 export class CartComponent implements OnInit{
   cartItems: Item[] = [];
+  filteredItems: Item[] = [];
 
   constructor(private groceriesService: GroceriesService){}
 
@@ -37,6 +38,16 @@ export class CartComponent implements OnInit{
   getTotalPrice(): number {
     const totalPrice = this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     return parseFloat(totalPrice.toFixed(2));  
+  }
+
+  filterByType(type: string) {
+    if(type === "default"){
+      this.cartItems = this.groceriesService.getCartItems();
+    } else {
+      this.filteredItems = this.groceriesService.filterByType(type);
+      this.cartItems = this.filteredItems; 
+    }
+
   }
 
 }

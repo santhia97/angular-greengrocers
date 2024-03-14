@@ -57,12 +57,15 @@ export class GroceriesService {
 
   // groceries.service.ts
 
-removeFromCart(item: Item): void {
-  const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
-  if (index !== -1) {
-    this.cartItems.splice(index, 1);
+  removeFromCart(item: Item): void {
+    const index = this.cartItems.findIndex(cartItem => cartItem.id === item.id);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+    }
   }
-}
 
-
+  // Filter items by type
+  filterByType(type: string): Item[] {
+  return this.cartItems.filter(item => item.type === type);
+  }
 }
