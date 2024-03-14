@@ -110,7 +110,7 @@ app-cart {
   padding: 1rem 0;
 
   display: grid;
-  grid-template-columns: 24px minmax(150px, 1fr) repeat(3, auto);
+  grid-template-columns: 24px minmax(150px, 1fr) repeat(4, auto);
   grid-gap: 0.5rem;
   align-items: center;
 
